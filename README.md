@@ -28,3 +28,9 @@ https://www.geeksforgeeks.org/memset-c-example/
 Working in Vim
 
 https://linuxize.com/post/how-to-copy-cut-paste-in-vim/
+https://stackoverflow.com/questions/4620672/copy-and-paste-content-from-one-file-to-another-file-in-vi
+https://linuxize.com/post/how-to-show-line-numbers-in-vim/
+
+Put command in C
+
+https://www.digitalocean.com/community/tutorials/puts-function-c-plus-plus
