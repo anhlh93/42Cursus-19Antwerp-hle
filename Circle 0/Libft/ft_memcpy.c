@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:42:26 by hle               #+#    #+#             */
-/*   Updated: 2023/01/13 14:42:27 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/13 18:03:41 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	*ft_memcpy(void *dst, const void *sc, size_t n)
 {
 	char	*str1;
-	const char	*str2;
+	char	*str2;
 	size_t	i;
 
 	i = 0;
@@ -31,7 +31,7 @@ void	*ft_memcpy(void *dst, const void *sc, size_t n)
 	return (str1);
 }
 /*
-int	main ()
+int	main (void)
 {
   char	str1[50] = "Greeks"; 
   char	str2[50] = "Quiz"; 
