@@ -25,6 +25,10 @@ memset
 
 https://www.geeksforgeeks.org/memset-c-example/
 
+memcpy vs memmove
+
+https://www.startpage.com/do/search?q=memmove+vs+memcpy&segment=startpage.brave
+
 Working in Vim
 
 https://linuxize.com/post/how-to-copy-cut-paste-in-vim/
