@@ -38,3 +38,7 @@ https://linuxize.com/post/how-to-show-line-numbers-in-vim/
 Put command in C
 
 https://www.digitalocean.com/community/tutorials/puts-function-c-plus-plus
+
+42 Header
+
+https://github.com/42Paris/42header
