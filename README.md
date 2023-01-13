@@ -24,3 +24,7 @@ https://stackoverflow.com/questions/17096990/why-use-bzero-over-memset
 memset
 
 https://www.geeksforgeeks.org/memset-c-example/
+
+Working in Vim
+
+https://linuxize.com/post/how-to-copy-cut-paste-in-vim/
