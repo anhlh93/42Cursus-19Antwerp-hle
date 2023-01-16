@@ -6,45 +6,32 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:42:26 by hle               #+#    #+#             */
-/*   Updated: 2023/01/13 18:03:41 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/16 16:23:14 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 
-void	*ft_memcpy(void *dst, const void *sc, size_t n)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	char	*str1;
-	char	*str2;
-	size_t	i;
+	unsigned int	i;
 
 	i = 0;
-	str1 = dst;
-	str2 = sc;
-	while (i < n)
+	while ((s1[i] != '\0' || s2[i] != '\0') && (i < n))
 	{
-		str1[i] = str2[i];
+		if (s1[i] > s2[i])
+			return (1);
+		else if (s1[i] < s2[i])
+			return (-1);
 		i++;
 	}
-	return (str1);
+	return (0);
 }
 /*
-int	main (void)
+int	main()
 {
-  char	str1[50] = "Greeks"; 
-  char	str2[50] = "Quiz"; 
- 
-  puts("str1 before memcpy ");
-  puts(str1);
- 
-  // Copies contents of str2 to str1
-  ft_memcpy (str1, str2, 1);
- 
-  puts("\nstr1 after memcpy ");
-  puts(str1);
- 
-  return 0;
+	printf("%d", ft_strncmp("HelloWorld","Hello", 6));
+	printf("\n%d", strncmp("HelloWorld", "Hello", 6)); 
 }
 */

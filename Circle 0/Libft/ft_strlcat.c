@@ -6,8 +6,55 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:23:53 by hle               #+#    #+#             */
-/*   Updated: 2023/01/13 15:23:54 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/16 11:09:07 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include "libft.h"
+# include "stdio.h"
+# include "string.h"
 
+int	ft_strlen(char *str)
+{
+	int	n;
+
+	n = 0;
+	while (str[n])
+		n++;
+	return (n);
+}
+
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = ft_strlen(src);
+	if (i + 1 < size)
+	{
+		j = 0;
+		while (j < i + 1)
+		{
+			dest[j] = src[j];
+			j++;
+		}
+	}
+	else if (size)
+	{
+		j = 0;
+		while (j < size - 1)
+		{
+			dest[j] = src[j];
+			j++;
+		}
+		dest[j] = '\0';
+	}
+	return (i);
+}
+
+int	main()
+{
+	char src[50] = "World!";
+	char dest[50] = "Hello ";
+	printf("%d | %s", strlcat(dest, src, 10), dest);
+}
