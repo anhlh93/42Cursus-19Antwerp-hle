@@ -6,11 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:50 by hle               #+#    #+#             */
-/*   Updated: 2023/01/18 09:57:19 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 12:10:27 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -24,7 +24,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(array, (nmemb * size));
 	return (a);
 }
-
+/*
 int	main(void)
 {
 	int	i;
@@ -47,3 +47,4 @@ int	main(void)
 	free(a);
 	return (0);
 }
+*/

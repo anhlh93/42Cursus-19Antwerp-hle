@@ -6,12 +6,13 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:46 by hle               #+#    #+#             */
-/*   Updated: 2023/01/18 11:20:27 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 12:05:26 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
 int	ft_len(int n)
 {
@@ -35,7 +36,7 @@ int	ft_len(int n)
 
 char	*ft_itoa(int n)
 {
-	int	len;
+	int		len;
 	char	*s;
 
 	len = ft_len(n);

@@ -6,11 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:07:04 by hle               #+#    #+#             */
-/*   Updated: 2023/01/18 12:08:07 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 11:22:04 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 /*
 ** Description: Applies the function ’f’ to each character of the
@@ -27,7 +27,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char		*new;
+	char			*new;
 
 	if (!s)
 		return (NULL);
@@ -45,6 +45,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 ** str[i] = f(i, s[i]) <-- because unsigned int, char
 ** malloc: create new string with length using ft_strlen
 */
+/*
 char my_func(unsigned int i, char str)
 {
 	printf("My inner function: index = %d and %c\n", i, str);
@@ -59,3 +60,4 @@ int	main()
 	printf("The result is %s\n", result);
 	return 0;
 }
+*/

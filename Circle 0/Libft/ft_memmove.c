@@ -6,11 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:44:23 by hle               #+#    #+#             */
-/*   Updated: 2023/01/16 10:42:23 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 11:42:17 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 #include <string.h>
 #include <stdio.h>
 
@@ -42,7 +42,6 @@ void	*ft_memove(void *dst, const void *src, size_t n)
 	}
 	return (dest);
 }
-
 /*
 int	main(void)
 {

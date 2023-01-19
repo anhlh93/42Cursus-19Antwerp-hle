@@ -6,13 +6,13 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:42:15 by hle               #+#    #+#             */
-/*   Updated: 2023/01/13 17:10:44 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 12:11:08 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include "stdio.h"
-#include "string.h"
+#include "libft.h"
+#include <stdio.h>
+#include <string.h>
 //cannot work with *s directly
 
 void	ft_bzero(void *s, size_t n)

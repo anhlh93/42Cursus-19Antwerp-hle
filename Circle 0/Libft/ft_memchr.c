@@ -6,14 +6,13 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:07 by hle               #+#    #+#             */
-/*   Updated: 2023/01/16 16:20:12 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 12:02:41 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 #include <string.h>
 #include <stdio.h>
-#include <string.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -30,7 +29,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
+/*
 int	main(void)
 {
 	const char	str[] = "http://www.tutorialspoint.com";
@@ -41,3 +40,4 @@ int	main(void)
 	printf("String after |%c| is - |%s|\n", ch, ret);
 	return (0);
 }
+*/

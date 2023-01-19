@@ -6,11 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:07:18 by hle               #+#    #+#             */
-/*   Updated: 2023/01/18 12:17:53 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 11:25:03 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 
 /*
 ** Description: Applies the function ’f’ to each character of the

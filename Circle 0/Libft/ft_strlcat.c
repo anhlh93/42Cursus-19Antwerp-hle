@@ -6,14 +6,14 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:23:53 by hle               #+#    #+#             */
-/*   Updated: 2023/01/16 11:09:07 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 11:24:06 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-# include "stdio.h"
-# include "string.h"
-
+#include "libft.h"
+#include "stdio.h"
+#include "string.h"
+/*
 int	ft_strlen(char *str)
 {
 	int	n;
@@ -23,7 +23,7 @@ int	ft_strlen(char *str)
 		n++;
 	return (n);
 }
-
+*/
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	i;
@@ -51,10 +51,11 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	return (i);
 }
-
+/*
 int	main()
 {
 	char src[50] = "World!";
 	char dest[50] = "Hello ";
 	printf("%d | %s", strlcat(dest, src, 10), dest);
 }
+*/

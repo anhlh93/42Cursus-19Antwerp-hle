@@ -6,16 +6,17 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:58 by hle               #+#    #+#             */
-/*   Updated: 2023/01/18 10:15:24 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 11:28:05 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
+#include "libft.h"
 #include <string.h>
 #include <stdio.h>
-// A copy of source is created dynamically
-// and pointer to copy is returned.
-
+/* 
+** A copy of source is created dynamically
+** and pointer to copy is returned.
+*/
 char	*ft_strdup(const char *s)
 {
 	char	*new;
@@ -29,7 +30,7 @@ char	*ft_strdup(const char *s)
 	new[size] = "\0";
 	return (new);
 }
-
+/*
 int	main()
 {
 	char	source[] = "GeeksForGeeks";
@@ -39,3 +40,4 @@ int	main()
 	printf("%s", target);
 	return (0);
 }
+*/
