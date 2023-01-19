@@ -6,11 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:05:28 by hle               #+#    #+#             */
-/*   Updated: 2023/01/16 10:04:32 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 10:01:44 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//include "libft.h"
+#include "libft.h"
 
 static int	ft_checkset(char const c, char const *set)
 {

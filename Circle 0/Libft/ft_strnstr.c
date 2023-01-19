@@ -6,17 +6,22 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:30 by hle               #+#    #+#             */
-/*   Updated: 2023/01/18 09:13:46 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/19 10:05:56 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
+#include "libft.h"
 #include <string.h>
 #include <stdio.h>
-// If needle is an empty string, haystack is returned; if needle occurs nowhere in haystack, NULL is returned; otherwise a pointer to the 
-// first character of the first occurrence of needle is returned. The strnstr() function locates the first occurrence of the null-terminated 
-// string needle in the string haystack, \where not more than len characters are searched.
-
+/*
+** If needle is an empty string, haystack is returned;
+** if needle occurs nowhere in haystack, NULL is returned;
+** otherwise a pointer to the first character 
+** of the first occurrence of needle is returned.
+** The strnstr() function locates the first occurrence of 
+** the null-terminated string needle in the string haystack, 
+** where not more than len characters are searched.
+*/
 char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 {
 	size_t	i;
@@ -46,7 +51,7 @@ char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 /*
 j == ft_strlen(ss) equals ss[j] == "/0" 
 */
-
+/*
 int	main(void)
 {
 	const char	largestring[20] = "Foo Bar Baz";
@@ -57,4 +62,4 @@ int	main(void)
 	printf("String after locates little string |%s| is - |%s|\n", smallstring, ptr);
 	return (0);
 }
-
+*/
