@@ -11,6 +11,8 @@ MakeFile
 https://makefiletutorial.com/
 https://gl.developpez.com/tutoriel/outil/makefile/
 http://perso.univ-lyon1.fr/jean-claude.iehl/Public/educ/Makefile.html
+https://stackoverflow.com/a/51128431 (Meaning of LIBC ar rcs)
+https://noahloomans.com/tutorials/makefile/
 
 memcpy
 
@@ -43,3 +45,19 @@ https://www.digitalocean.com/community/tutorials/puts-function-c-plus-plus
 42 Header
 
 https://github.com/42Paris/42header
+
+Remove hidden files in terminals
+
+https://www.quora.com/How-can-I-remove-hidden-files-in-Linux
+
+Make multiple subfolders: 
+
+https://askubuntu.com/a/731730
+
+# Testers
+
+GitHub - ska42/libft-war-machine: forked repository of libftest (by jtoty) for libft at 42
+GitHub - Tripouille/libftTester: Tester for the libft project of 42 school
+GitHub - alelievr/libft-unit-test
+GitHub - jtoty/Libftest
+
