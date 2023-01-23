@@ -6,7 +6,7 @@
 #    By: hle <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 15:27:30 by hle               #+#    #+#              #
-#    Updated: 2023/01/23 16:02:04 by hle              ###   ########.fr        #
+#    Updated: 2023/01/23 16:45:24 by hle              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,14 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c \
        ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
        ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
        ft_putendl_fd.c ft_putnbr_fd.c
-# Compile 
-OBJS = ${SRCS: .c=.o}
-
+# Object files compile for first and second part
+OBJS = ${SRCS:.c=.o}
+# Sources files compile for bonus part
+SRCSB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
+	ft_lstmap.c
+# Object files compile for bonus part
+OBJSB = ${SRCSB:.c=.o}
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
@@ -37,12 +42,14 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
+bonus: ${NAME} ${OBJSB} 
+	${LIBC} ${NAME} ${OBJSB}
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJSB}
 
 fclean: clean
-	${RM} ${NAME}
+	${RM} ${NAME} ${bonus}
 
 re: fcclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all bonus clean fclean re
