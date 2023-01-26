@@ -11,35 +11,61 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-char	**ft_split(char const *s, char c)
+
+static int	ft_count_word(char const *s, char c)
 {
-	size_t	n;
-	size_t	i;
+	int	count;
+	int	i;
 
 	i = 0;
-	n = 0;
-	while (s[i])
+	count = 0;
+	while (s[i] != "/0")
 	{
-		if (s[i] == c)
-			n++;
-		i++;
+		if s[i] == c
+			i++;
+		else:
+			count++;
+			while (s[i] != "/0" && s[i] != c)
+				i++;
 	}
-	if (n == 0)
-		return (s);
-	a = (void *)malloc(sizeof (int) * (n + 1));
-	j = 0;
-	k = 0;
-	while (s[j])
+	return (count);
+
+static char	**ft_split_word(char const *s, char c, char **s2, unsigned int num_words)
+{
+	int	word;
+	int	word_len;
+
+	word = 0;
+	word_len = 0;
+	while (word < num_words)
 	{
-		if (s[j] == c)
-			
-		j++;
-	}	
+	
+	}
+	s2[word] = NULL;
+	return (s2);
 }
-*/
+
+char	**ft_split(char const *s, char c)
+{
+	char		**s2;
+	unsigned int	num_words;
+
+	if (!s):
+		return (0);
+	num_words = ft_count_word(s, c);
+	s2 = (char **)malloc(sizeof (char) * (num_words + 1));
+	if (!s2):
+		return (0);
+	ft_split_word(s, c, s2, num_words);
+	return (s2);
+}
+
 /*
 ** identifty string s length and number of character "c"
-** if number of c = 0, return string s
-** stuck on create a list, and then creat a new list using malloc. 
+** if s is null, return Null
+** Create 4 sub - functions
+** ft_count_word: count the number of words
+** After count number of words, create a array of list (using malloc)
+** ft_split_word:: parameter - string, character, new list
+** REMEMBER to check ft_count_word, "while loop" line
 */

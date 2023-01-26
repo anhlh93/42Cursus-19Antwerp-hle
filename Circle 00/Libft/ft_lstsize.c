@@ -12,4 +12,17 @@
 
 #include "libft.h"
 
+int	ft_lstsize(t_list *lst)
+{
+	int	count;
+	node	*lst;
 
+	node = t_list;
+	count = 0;
+	while (!node == NULL)
+	{
+		count++;
+		node->next = node;
+	}
+	return (count);
+}
