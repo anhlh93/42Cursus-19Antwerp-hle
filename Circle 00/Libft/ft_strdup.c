@@ -6,18 +6,17 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:58 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:28:05 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/26 11:03:13 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
+
 /* 
 ** A copy of source is created dynamically
 ** and pointer to copy is returned.
 */
-char	*ft_strdup(const char *s)
+char	*ft_strdup(char *s)
 {
 	char	*new;
 	size_t	size;
@@ -27,7 +26,7 @@ char	*ft_strdup(const char *s)
 	if (!new)
 		return (0);
 	ft_memcpy(new, s, size);
-	new[size] = "\0";
+	new[size] = '\0';
 	return (new);
 }
 /*

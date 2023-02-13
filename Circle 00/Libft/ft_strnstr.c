@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:30 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 10:05:56 by hle              ###   ########.fr       */
+/*   Updated: 2023/01/26 10:58:39 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,26 @@
 ** the null-terminated string needle in the string haystack, 
 ** where not more than len characters are searched.
 */
-char	*ft_strnstr(const char *ls, const char *ss, size_t n)
+char	*ft_strnstr(char *ls, char *ss, size_t n)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	ls_len = ft_strlen(ls);
 	if (!ss && !ls)
 		return (NULL);
-	if (ss[0] == "\0" || ls == ss)
+	if (ss[0] == '\0' || ls == ss)
 		return (ls);
-	while (ls[i] != "\0")
+	while (ls[i] != '\0')
 	{
 		j = 0;
 		while ((i + j) < n && ls[i + j] == ss[j])
 		{
-			if (ls[i + j] == "\0")
+			if (ls[i + j] == '\0')
 				return (NULL);
 			j++;
 		}
-		if (ss[j] == "\0")
+		if (ss[j] == '\0')
 			return (ls + i);
 		i++;
 	}
