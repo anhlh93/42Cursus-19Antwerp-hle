@@ -59,7 +59,7 @@ char	*ft_itoa(int n)
 	}
 	return (s);
 }
-/*
+/* Code explaination
 ** Count number of character of integer n (include '-' sign) (variable len)
 ** Use malloc creat a new string with size of len + 1
 ** Special case: number smaller or equal 0

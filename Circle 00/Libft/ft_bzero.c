@@ -39,3 +39,7 @@ int	main()
 	return 0;
 }
 */
+/*
+Alternative, could just use ft_memset. Using memset(str,0,n)
+Line 24 is actually str = (char*)s
+*/

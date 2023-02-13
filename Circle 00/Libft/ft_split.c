@@ -21,16 +21,18 @@ static int	ft_count_word(char const *s, char c)
 	count = 0;
 	while (s[i] != "/0")
 	{
-		if s[i] == c
+		if (s[i] == c)
 			i++;
-		else:
+		else
+		{
 			count++;
 			while (s[i] != "/0" && s[i] != c)
 				i++;
+		}
 	}
 	return (count);
 
-static char	**ft_split_word(char const *s, char c, char **s2, unsigned int num_words)
+static char	**ft_split_word(char const *s, char c, char **s2, int num_words)
 {
 	int	word;
 	int	word_len;
@@ -48,24 +50,23 @@ static char	**ft_split_word(char const *s, char c, char **s2, unsigned int num_w
 char	**ft_split(char const *s, char c)
 {
 	char		**s2;
-	unsigned int	num_words;
+	int	num_words;
 
 	if (!s):
 		return (0);
 	num_words = ft_count_word(s, c);
-	s2 = (char **)malloc(sizeof (char) * (num_words + 1));
+	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (!s2):
 		return (0);
 	ft_split_word(s, c, s2, num_words);
 	return (s2);
 }
 
-/*
-** identifty string s length and number of character "c"
-** if s is null, return Null
-** Create 4 sub - functions
-** ft_count_word: count the number of words
-** After count number of words, create a array of list (using malloc)
-** ft_split_word:: parameter - string, character, new list
-** REMEMBER to check ft_count_word, "while loop" line
+/* Code explaination
+- identifty string s length and number of character "c"
+- if s is null, return Null
+- Create 4 sub - functions
+- ft_count_word: count the number of words, seperated by letter "c". Use static so the functions can be only used inside the program. 
+- After count number of words, create array of list s2 (using malloc)
+- ft_split_word:: parameter - string, character, new list
 */

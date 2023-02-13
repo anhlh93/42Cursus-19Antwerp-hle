@@ -20,3 +20,11 @@ void	ft_putendl_fd(char *s, int fd)
 	write(fd, "\n", 1);
 }
 /* remember to insert the enter signal */
+/*
+int	main(void)
+{
+	char str[] = "hello";
+	ft_putendl_fd(str, 1);
+	return (0);
+}
+*/

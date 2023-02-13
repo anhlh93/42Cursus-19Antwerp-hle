@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	result;
 	int	sign;
@@ -46,4 +46,9 @@ int	main(void)
 	printf("FT_ATOI (%s) = %d\n\n", str, ft_atoi(str));
 	return (0);
 }
+*/
+/* Code explaination
+- First loop to eliminate special character such as \t, \n or space
+- Next, loop to determine sign of the number (positive or negative)
+- Next, loop to create a new number from existing strings of characters.
 */

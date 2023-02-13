@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-/* 
-** A copy of source is created dynamically
-** and pointer to copy is returned.
-*/
 char	*ft_strdup(char *s)
 {
 	char	*new;
@@ -39,4 +35,8 @@ int	main()
 	printf("%s", target);
 	return (0);
 }
+*/
+/* 
+** A copy of source is created dynamically
+** and pointer to copy is returned.
 */

@@ -16,13 +16,9 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while ((char)c != *s)
-	{
-		if (!*s)
-			return (NULL);
+	while ((char)c != *s && *s != '\0')
 		s++;
-	}
-	return ((char *)s);
+	return (*s == (char)c) ? (char *)s: NULL;
 }
 /*
 int	main(void)
@@ -35,4 +31,7 @@ int	main(void)
 	printf("String after |%c| is - |%s|\n", ch, ret);
 	return (0);
 }
+*/
+/*
+The ternary operator '? :' in C is a shorthand way of writing if - else statement.
 */

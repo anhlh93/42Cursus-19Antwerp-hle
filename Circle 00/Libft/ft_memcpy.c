@@ -14,20 +14,19 @@
 #include <stdio.h>
 #include <string.h>
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && (i < n))
+	if (!s1 && !s2)
+		return (NULL);
+	while (i<n)
 	{
-		if (s1[i] > s2[i])
-			return (1);
-		else if (s1[i] < s2[i])
-			return (-1);
+		*(unsigned char *)(s1 + i) = *(unsigned char *)(s2 + i);
 		i++;
 	}
-	return (0);
+	return (s1);
 }
 /*
 int	main()
@@ -35,4 +34,9 @@ int	main()
 	printf("%d", ft_strncmp("HelloWorld","Hello", 6));
 	printf("\n%d", strncmp("HelloWorld", "Hello", 6)); 
 }
+*/
+/*
+Ways of writing line 26: 
+- *((unsigned char *)s1 + i) = *((unsigned char *)s2 + i)
+- *(dst + i) = *(src + i)
 */

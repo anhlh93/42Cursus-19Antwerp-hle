@@ -29,7 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		ss2++;
 		i++;
 	}
-	return ((int)(*ss1 - *ss2));
+	return ((*ss1 - *ss2));
 }
 /*
 int	main()
@@ -40,4 +40,8 @@ int	main()
 	printf("%d", ft_memcmp(str1,str2, 6));
 	printf("\n%d", memcmp(str1, str2, 6)); 
 }
+*/
+/* Code explaination 
+- Create 2 new unsigned char pointer to cast s1 and s2, ensure correct comparison. 
+- Can be made shorter, by just using (unsigned char)*s1 and remove varible i, by running n--
 */
