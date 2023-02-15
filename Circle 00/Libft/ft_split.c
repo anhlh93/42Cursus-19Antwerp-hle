@@ -6,11 +6,12 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:37 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:31:43 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/15 14:01:02 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 static int	ft_count_word(char const *s, char c)
 {
@@ -31,42 +32,93 @@ static int	ft_count_word(char const *s, char c)
 		}
 	}
 	return (count);
+}
+
+static char	**ft_free(char **s2, int i)
+{
+	while (i > 0)
+	{
+		i--;
+		free(s2[i]);
+	}
+	free(s2);
+	return (0);
+}
 
 static char	**ft_split_word(char const *s, char c, char **s2, int num_words)
 {
+	int	i;
+	int	j;
 	int	word;
-	int	word_len;
+	int	new_word_len;
 
+	i = 0;
 	word = 0;
-	word_len = 0;
+	new_word_len = 0;
 	while (word < num_words)
 	{
-	
+		while (s[i] && s[i] == c)
+			i++;
+		while (s[i] && s[i] != c)
+		{
+			i++;
+			new_word_len++;
+		}
+		s2[word] = (char *)malloc(sizeof(char *) * (new_word_len + 1));
+		if (!s2[word])
+			return (ft_free(s2, word));
+		j = 0;
+		while (j < new_word_len)
+		{
+			s2[word][j] = s[i - new_word_len + j];
+			j++;
+		}
+		s2[word][j] = '\0';
+		new_word_len = 0;
+		word++;
 	}
-	s2[word] = NULL;
 	return (s2);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char		**s2;
-	int	num_words;
+	int			num_words;
 
-	if (!s):
+	if (!s)
 		return (0);
 	num_words = ft_count_word(s, c);
 	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
-	if (!s2):
+	if (!s2)
 		return (0);
 	ft_split_word(s, c, s2, num_words);
 	return (s2);
 }
 
-/* Code explaination
-- identifty string s length and number of character "c"
-- if s is null, return Null
-- Create 4 sub - functions
-- ft_count_word: count the number of words, seperated by letter "c". Use static so the functions can be only used inside the program. 
-- After count number of words, create array of list s2 (using malloc)
-- ft_split_word:: parameter - string, character, new list
-*/
+int main(void)
+{
+    char const *s1 = "  Hello  world  ! ";
+    char const *s2 = " A ";
+    char const *s3 = "";
+    char **result;
+
+    // test 1
+    result = ft_split(s1, ' ');
+    for (int i = 0; result[i] != NULL; i++)
+        printf("%s\n", result[i]);
+    // Expected output: "Hello", "world", "!"
+
+    // test 2
+    result = ft_split(s2, ' ');
+    for (int i = 0; result[i] != NULL; i++)
+        printf("%s\n", result[i]);
+    // Expected output: "A"
+
+    // test 3
+    result = ft_split(s3, ' ');
+    for (int i = 0; result[i] != NULL; i++)
+        printf("%s\n", result[i]);
+    // Expected output: nothing printed (i.e. empty array)
+
+    return (0);
+}

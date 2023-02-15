@@ -21,7 +21,7 @@ int	ft_strncmp(void *s1, const void *s2, size_t n)
 	i = 0;
 	if (!s1 && !s2)
 		return (NULL);
-	while (i<n)
+	while (i < n)
 	{
 		*(unsigned char *)(s1 + i) = *(unsigned char *)(s2 + i);
 		i++;
@@ -34,9 +34,4 @@ int	main()
 	printf("%d", ft_strncmp("HelloWorld","Hello", 6));
 	printf("\n%d", strncmp("HelloWorld", "Hello", 6)); 
 }
-*/
-/*
-Ways of writing line 26: 
-- *((unsigned char *)s1 + i) = *((unsigned char *)s2 + i)
-- *(dst + i) = *(src + i)
 */

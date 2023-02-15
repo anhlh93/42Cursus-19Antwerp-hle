@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:50 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 12:10:27 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/15 14:08:23 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,4 @@ int	main(void)
 	free(a);
 	return (0);
 }
-*/
-/* Code Explaination
-- First, check special case when either variable is equal to 0 --> Return NULL
-- Allocate a block of nmemb*size memmory. 
-- Check if the allocation fails (is NULL), if then return NULL
-- Initialize memmory to equal 0, then return the address of the memmory block
-- The test: Store the numbers prompted by scanf in an array of n integer. The address of the first element is stored in the variable a. 
 */

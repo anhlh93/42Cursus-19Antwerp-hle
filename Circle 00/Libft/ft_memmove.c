@@ -57,8 +57,3 @@ int	main(void)
 	return 0;
 }
 */
-/* Explain the code
-- Check if dst and src are NULL --> return NULL
-- Create 2 unsigned char d and s to store the addresses of dst and src. 
-- i is the counter of for the numbers of bytes copied, j is the direction of copy operation. If dst > src, we copy from backward.
-*/

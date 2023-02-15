@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:18 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:58:08 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/15 14:11:41 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,4 @@ int	main()
 	printf("%d", ft_memcmp(str1,str2, 6));
 	printf("\n%d", memcmp(str1, str2, 6)); 
 }
-*/
-/* Code explaination 
-- Create 2 new unsigned char pointer to cast s1 and s2, ensure correct comparison. 
-- Can be made shorter, by just using (unsigned char)*s1 and remove varible i, by running n--
 */
