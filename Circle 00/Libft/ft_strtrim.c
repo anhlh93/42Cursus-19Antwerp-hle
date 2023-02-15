@@ -35,15 +35,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	while (s1)
 	{
-		if (ft_check_set(((char)*s1), set) == 1)
+		if (ft_checkset(((char)*s1), set) == 1)
 			s1++;
 		else
 			break ;
 	}
-	s_len = ft_strlen(s1);
+	size = ft_strlen(s1);
 	while (size != 0)
 	{
-		if (ft_check_set(s1[size - 1], set) == 1)
+		if (ft_checkset(s1[size - 1], set) == 1)
 			size--;
 		else
 			break ;
@@ -51,6 +51,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new = (char *)malloc(sizeof(char) * (size + 1));
 	if (!new)
 		return (NULL);
-	ft_strcpy(new, (char *)s1, size + 1);
+	ft_strlcpy(new, (char *)s1, size + 1);
 	return (new);
 }
