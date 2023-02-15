@@ -41,15 +41,14 @@ char	*ft_itoa(int n)
 
 	len = ft_len(n);
 	s = (char *)malloc(sizeof(char) * (len + 1));
+	if (n == 0)
+		s[0] = 48 + n;
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
 	if (n < 0)
 	{
 		s[0] = '-';
 		n *= (-1);
-	}
-	if (n == 0)
-	{
-		s[0] = 48;
-		return (s);
 	}
 	s[len--] = '\0';
 	while (n > 0)
