@@ -31,7 +31,7 @@ char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 	if (!ss && !ls)
 		return (NULL);
 	if (ss[0] == '\0' || ls == ss)
-		return ((const char*)ls);
+		return ((char*)ls);
 	while (ls[i] != '\0')
 	{
 		j = 0;
@@ -42,7 +42,7 @@ char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 			j++;
 		}
 		if (ss[j] == '\0')
-			return ((const char*)ls + i);
+			return ((char*)ls + i);
 		i++;
 	}
 	return (NULL);
