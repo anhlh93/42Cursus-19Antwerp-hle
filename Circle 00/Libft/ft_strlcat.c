@@ -13,17 +13,7 @@
 #include "libft.h"
 #include "stdio.h"
 #include "string.h"
-/*
-int	ft_strlen(char *str)
-{
-	int	n;
 
-	n = 0;
-	while (str[n])
-		n++;
-	return (n);
-}
-*/
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	i;

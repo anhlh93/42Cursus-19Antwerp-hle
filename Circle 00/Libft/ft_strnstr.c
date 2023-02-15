@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:30 by hle               #+#    #+#             */
-/*   Updated: 2023/01/26 10:58:39 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/15 16:29:09 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 	if (!ss && !ls)
 		return (NULL);
 	if (ss[0] == '\0' || ls == ss)
-		return ((char*)ls);
+		return ((char *)ls);
 	while (ls[i] != '\0')
 	{
 		j = 0;
@@ -42,7 +42,7 @@ char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 			j++;
 		}
 		if (ss[j] == '\0')
-			return ((char*)ls + i);
+			return ((char *)ls + i);
 		i++;
 	}
 	return (NULL);
