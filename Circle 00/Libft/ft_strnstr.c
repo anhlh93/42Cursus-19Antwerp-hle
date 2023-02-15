@@ -22,7 +22,7 @@
 ** the null-terminated string needle in the string haystack, 
 ** where not more than len characters are searched.
 */
-char	*ft_strnstr(char *ls, char *ss, size_t n)
+char	*ft_strnstr(const char *ls, const char *ss, size_t n)
 {
 	size_t	i;
 	size_t	j;

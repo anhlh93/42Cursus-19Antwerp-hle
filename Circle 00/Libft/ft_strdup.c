@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strdup(char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*new;
 	size_t	size;
@@ -37,6 +37,7 @@ int	main()
 }
 */
 /* 
+** GOAL: save a copy of a string
 ** A copy of source is created dynamically
 ** and pointer to copy is returned.
 */

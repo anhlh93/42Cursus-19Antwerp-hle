@@ -24,10 +24,10 @@ int	ft_strlen(char *str)
 	return (n);
 }
 */
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = ft_strlen(src);
 	if (i + 1 < size)

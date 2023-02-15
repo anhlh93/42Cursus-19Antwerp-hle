@@ -18,7 +18,9 @@ char	*ft_strchr(const char *s, int c)
 {
 	while ((char)c != *s && *s != '\0')
 		s++;
-	return (*s == (char)c) ? (char *)s: NULL;
+	if (*s == (char)c)
+		return ((char *)s);
+	return (0);
 }
 /*
 int	main(void)
@@ -32,6 +34,4 @@ int	main(void)
 	return (0);
 }
 */
-/*
-The ternary operator '? :' in C is a shorthand way of writing if - else statement.
-*/
+// Locate character in string

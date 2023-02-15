@@ -20,14 +20,14 @@ static int	ft_count_word(char const *s, char c)
 
 	i = 0;
 	count = 0;
-	while (s[i] != "/0")
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 			i++;
 		else
 		{
 			count++;
-			while (s[i] != "/0" && s[i] != c)
+			while (s[i] != '\0' && s[i] != c)
 				i++;
 		}
 	}
@@ -45,16 +45,28 @@ static char	**ft_free(char **s2, int i)
 	return (0);
 }
 
+static char	*ft_putstr(char const *s, char *s3, int i, int l)
+{
+	int	j;
+
+	j = 0;
+	while (j < l)
+	{
+		s3[j] = s[i - l + j];
+		j++;
+	}
+	return (s3);
+}
+
 static char	**ft_split_word(char const *s, char c, char **s2, int num_words)
 {
 	int	i;
-	int	j;
 	int	word;
-	int	new_word_len;
+	int	l;
 
 	i = 0;
 	word = 0;
-	new_word_len = 0;
+	l = 0;
 	while (word < num_words)
 	{
 		while (s[i] && s[i] == c)
@@ -62,19 +74,13 @@ static char	**ft_split_word(char const *s, char c, char **s2, int num_words)
 		while (s[i] && s[i] != c)
 		{
 			i++;
-			new_word_len++;
+			l++;
 		}
-		s2[word] = (char *)malloc(sizeof(char *) * (new_word_len + 1));
+		s2[word] = (char *)malloc(sizeof(char *) * (l + 1));
 		if (!s2[word])
 			return (ft_free(s2, word));
-		j = 0;
-		while (j < new_word_len)
-		{
-			s2[word][j] = s[i - new_word_len + j];
-			j++;
-		}
-		s2[word][j] = '\0';
-		new_word_len = 0;
+		ft_putstr(s, s2[word], i, l);
+		l = 0;
 		word++;
 	}
 	return (s2);
@@ -94,7 +100,7 @@ char	**ft_split(char const *s, char c)
 	ft_split_word(s, c, s2, num_words);
 	return (s2);
 }
-
+/*
 int main(void)
 {
     char const *s1 = "  Hello  world  ! ";
@@ -122,3 +128,4 @@ int main(void)
 
     return (0);
 }
+*/

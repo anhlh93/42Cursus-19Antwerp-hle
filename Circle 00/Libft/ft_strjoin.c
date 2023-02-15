@@ -25,6 +25,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	ft_strlcpy(new, s1, ft_strlen(s1));
 	i = ft_strlen(s1);
+	j = 0;
 	while (s2[j])
 	{
 		new[i] = s2[j];
@@ -34,3 +35,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new[i] = '\0';
 	return (new);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	char *s1 = "Hello, ";
+	char *s2 = "world!";
+	char *result = ft_strjoin(s1, s2);
+
+	if (result == NULL)
+	{
+		fprintf(stderr, "Error: ft_strjoin returned NULL\n");
+		exit(1);
+	}
+
+	printf("%s\n", result); // Output: "Hello, world!"
+
+	free(result);
+	return (0);
+}
+*/
