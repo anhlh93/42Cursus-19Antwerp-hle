@@ -23,7 +23,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	ss1 = (unsigned char *)s1;
 	ss2 = (unsigned char *)s2;
-	while (i < n && *ss1 == *ss2)
+	if (n == 0)
+		return (0);
+	while (i < n - 1 && *ss1 == *ss2)
 	{
 		ss1++;
 		ss2++;
@@ -34,10 +36,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 /*
 int	main()
 {
-	const char	str1[] = "HelloWorld";
-	const char	str2[] = "Hello";
+	const char	str1[] = "zyxbcdefgh";
+	const char	str2[] = "abcdefgxyz";
 	
-	printf("%d", ft_memcmp(str1,str2, 6));
-	printf("\n%d", memcmp(str1, str2, 6)); 
+	printf("%d", ft_memcmp(str1,str2, 0));
+	printf("\n%d", memcmp(str1, str2, 0)); 
 }
 */
