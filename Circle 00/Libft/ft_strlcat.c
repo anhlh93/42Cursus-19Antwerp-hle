@@ -13,39 +13,54 @@
 #include "libft.h"
 #include "stdio.h"
 #include "string.h"
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
+/*
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
-	size_t	j;
 
-	i = ft_strlen(src);
-	if (i + 1 < size)
+	i = 0;
+	while (str[i])
 	{
-		j = 0;
-		while (j < i + 1)
-		{
-			dest[j] = src[j];
-			j++;
-		}
-	}
-	else if (size)
-	{
-		j = 0;
-		while (j < size - 1)
-		{
-			dest[j] = src[j];
-			j++;
-		}
-		dest[j] = '\0';
+		i++;
 	}
 	return (i);
 }
-/*
-int	main()
+
+void	ft_print_result(int n)
 {
-	char src[50] = "World!";
-	char dest[50] = "Hello ";
-	printf("%d | %s", strlcat(dest, src, 10), dest);
+	char	c;
+
+	if (n >= 10)
+		ft_print_result(n / 10);
+	c = n % 10 + '0';
+	write (1, &c, 1);
 }
 */
+size_t	ft_strlcat(char *dest, const char *src, size_t size)
+{
+	size_t	dlen;
+	size_t	slen;
+	size_t	di;
+	size_t	si;
+
+	slen = ft_strlen(src);
+	if (!dest && !src)
+		return (0);
+	if (size == 0)
+		return (slen);
+	dlen = ft_strlen(dest);
+	if (size <= dlen)
+		return (slen + size);
+	if (size > (dlen + slen))
+		size = dlen + slen + 1;
+	di = dlen;
+	si = 0;
+	while (src[si] && di + 1 < size)
+	{
+		dest[di] = src[si];
+		di++;
+		si++;
+	}
+	dest[di] = 0;
+	return (slen + dlen);
+}
