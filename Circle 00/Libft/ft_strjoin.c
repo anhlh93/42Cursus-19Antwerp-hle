@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:49:25 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:24:52 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/27 16:15:13 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new = (char *)malloc(sizeof(char) * (new_len + 1));
 	if (!new)
 		return (0);
-	ft_strlcpy(new, s1, ft_strlen(s1));
-	i = ft_strlen(s1);
+	i = 0;
 	j = 0;
+	while (s1[i])
+	{
+		new[i] = s1[i];
+		i++;
+	}
 	while (s2[j])
 	{
 		new[i] = s2[j];

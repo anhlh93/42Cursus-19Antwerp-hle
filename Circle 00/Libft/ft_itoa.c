@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:46 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 12:05:26 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/27 17:01:51 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,38 @@ int	ft_len(int n)
 	return (len);
 }
 
+static char	*special(int n)
+{
+	char	*str;
+
+	if (n == -2147483648)
+	{
+		str = (char *)malloc(12 * sizeof(char));
+		if (!str)
+			return (NULL);
+		ft_strlcpy(str, "-2147483648", 12);
+	}
+	else
+	{
+		str = (char *)malloc(2 * sizeof(char));
+		if (!str)
+			return (NULL);
+		ft_strlcpy(str, "0", 2);
+	}
+	return (str);
+}
+
 char	*ft_itoa(int n)
 {
 	int		len;
 	char	*s;
 
 	len = ft_len(n);
-	s = (char *)malloc(sizeof(char) * (len + 1));
-	if (n == 0)
-		s[0] = 48 + n;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	if (n == -2147483648 || n == 0)
+		return (special(n));
+	s = (char *)malloc((len + 1) * sizeof(char));
+	if (!s)
+		return (NULL);
 	if (n < 0)
 	{
 		s[0] = '-';
@@ -67,7 +88,8 @@ char	*ft_itoa(int n)
 /*
 int	main(void)
 {
-	printf("%s\n",ft_itoa(-123423));
-	printf("%d\n",ft_len(1));
+	printf("%s\n",ft_itoa(-1234));
+	printf("%d\n",ft_len(-2147483647));
 }
 */
+

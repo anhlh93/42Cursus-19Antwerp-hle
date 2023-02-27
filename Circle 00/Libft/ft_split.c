@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:37 by hle               #+#    #+#             */
-/*   Updated: 2023/02/15 14:01:02 by hle              ###   ########.fr       */
+/*   Updated: 2023/02/27 16:43:18 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,8 @@ char	**ft_split(char const *s, char c)
 /*
 int main(void)
 {
-    char const *s1 = "  Hello  world  ! ";
-    char const *s2 = " A ";
+    char const *s1 = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
+    char const *s2 = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
     char const *s3 = "";
     char **result;
 
