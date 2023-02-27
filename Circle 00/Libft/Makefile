@@ -6,7 +6,7 @@
 #    By: hle <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 15:27:30 by hle               #+#    #+#              #
-#    Updated: 2023/01/26 13:13:37 by hle              ###   ########.fr        #
+#    Updated: 2023/02/27 11:19:44 by hle              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,14 +42,11 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-bonus: ${NAME} ${OBJSB} 
-	${LIBC} ${NAME} ${OBJSB}
 clean:
 	${RM} ${OBJS} ${OBJSB}
-
 fclean: clean
-	${RM} ${NAME} ${bonus}
+	${RM} ${NAME}
 
 re: fcclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
