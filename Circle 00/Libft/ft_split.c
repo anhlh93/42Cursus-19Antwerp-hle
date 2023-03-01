@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:37 by hle               #+#    #+#             */
-/*   Updated: 2023/02/27 16:43:18 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/01 16:15:14 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int	ft_count_word(char const *s, char c)
 		else
 		{
 			count++;
-			while (s[i] != '\0' && s[i] != c)
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
@@ -50,11 +50,13 @@ static char	*ft_putstr(char const *s, char *s3, int i, int l)
 	int	j;
 
 	j = 0;
-	while (j < l)
+	while (l > 0)
 	{
-		s3[j] = s[i - l + j];
+		s3[j] = s[i - l];
 		j++;
+		l--;
 	}
+	s3[j] = '\0';
 	return (s3);
 }
 
@@ -76,20 +78,21 @@ static char	**ft_split_word(char const *s, char c, char **s2, int num_words)
 			i++;
 			l++;
 		}
-		s2[word] = (char *)malloc(sizeof(char *) * (l + 1));
+		s2[word] = (char *)malloc(sizeof(char) * (l + 1));
 		if (!s2[word])
 			return (ft_free(s2, word));
 		ft_putstr(s, s2[word], i, l);
 		l = 0;
 		word++;
 	}
+	s2[word] = 0;
 	return (s2);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char		**s2;
-	int			num_words;
+	unsigned int			num_words;
 
 	if (!s)
 		return (0);
@@ -97,7 +100,7 @@ char	**ft_split(char const *s, char c)
 	s2 = (char **)malloc(sizeof(char *) * (num_words + 1));
 	if (!s2)
 		return (0);
-	ft_split_word(s, c, s2, num_words);
+	s2 = ft_split_word(s, c, s2, num_words);
 	return (s2);
 }
 /*
