@@ -6,12 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:37 by hle               #+#    #+#             */
-/*   Updated: 2023/03/01 16:15:14 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/02 09:32:41 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_count_word(char const *s, char c)
 {
@@ -91,8 +90,8 @@ static char	**ft_split_word(char const *s, char c, char **s2, int num_words)
 
 char	**ft_split(char const *s, char c)
 {
-	char		**s2;
-	unsigned int			num_words;
+	unsigned int	num_words;
+	char			**s2;
 
 	if (!s)
 		return (0);
@@ -106,8 +105,8 @@ char	**ft_split(char const *s, char c)
 /*
 int main(void)
 {
-    char const *s1 = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse";
-    char const *s2 = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
+    char const *s1 = "lorem ipsum dolor sit amet ";
+    char const *s2 = "   lorem   ipsum dolor     sit amet,    ";
     char const *s3 = "";
     char **result;
 
