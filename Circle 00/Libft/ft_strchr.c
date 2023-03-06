@@ -6,13 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:24:29 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:29:59 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:51:45 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -23,6 +21,8 @@ char	*ft_strchr(const char *s, int c)
 	return (0);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main(void)
 {
 	const char	str[] = "http://www.tutorialspoint.com";

@@ -6,20 +6,20 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:50 by hle               #+#    #+#             */
-/*   Updated: 2023/02/27 16:02:59 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 12:13:16 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*a;
+	size_t	total_size;
 
-	if (nmemb == 0 || size == 0)
-		return (ft_calloc(1, 1));
+	total_size = nmemb * size;
+	if (nmemb && total_size / nmemb != size)
+		return (NULL);
 	a = (void *)malloc(nmemb * size);
 	if (a == NULL)
 		return (NULL);
@@ -27,6 +27,8 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	return (a);
 }
 /*
+#include <stdlib.h>
+#include <stdio.h>
 int	main(void)
 {
 	int	i;

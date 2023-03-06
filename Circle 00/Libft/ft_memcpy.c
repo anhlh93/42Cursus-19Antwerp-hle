@@ -6,13 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:42:26 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:42:47 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:19:14 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 void	*ft_memcpy(void *s1, const void *s2, size_t n)
 {
@@ -29,6 +27,8 @@ void	*ft_memcpy(void *s1, const void *s2, size_t n)
 	return (s1);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main()
 {
 	int	arr1[5] = {1, 2, 3, 4, 5};

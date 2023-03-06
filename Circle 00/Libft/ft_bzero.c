@@ -6,13 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:42:15 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 12:11:08 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:50:00 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 //cannot work with *s directly
 
 void	ft_bzero(void *s, size_t n)
@@ -21,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	char	*str;
 
 	i = 0;
-	str = s;
+	str = (char *)s;
 	while (i < n)
 	{
 		str[i] = 0;
@@ -29,6 +27,8 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main()
 {
 	char str[50] = "GeeksForGeeks is for programming geeks.";

@@ -6,12 +6,10 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:24:54 by hle               #+#    #+#             */
-/*   Updated: 2023/02/27 14:12:13 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 10:35:44 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
@@ -19,6 +17,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	i;
 	int		a;
 
+	if (!s1 && !s2)
+		return (0);
 	i = 0;
 	a = 0;
 	while (!a && (s1[i] && s2[i]) && (i < n))
@@ -31,6 +31,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	return (a);
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main()
 {
 	printf("%d", ft_strncmp("HelloWorld","Hello", 6));

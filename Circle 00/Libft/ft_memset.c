@@ -6,13 +6,11 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 14:41:44 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:41:37 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:49:51 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-#include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -29,6 +27,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (str);
 }
 /*
+#include <string.h>
+#include <stdio.h>
 int	main()
 {
 	char str[50] = "GeeksForGeeks is for programming geeks.";

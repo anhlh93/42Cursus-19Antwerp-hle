@@ -6,12 +6,10 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 16:06:46 by hle               #+#    #+#             */
-/*   Updated: 2023/03/01 14:56:16 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 10:49:21 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "libft.h"
 
 int	ft_len(int n)
@@ -86,6 +84,9 @@ char	*ft_itoa(int n)
 ** Loop to fill string from end to beginning (use module)
 */
 /*
+#include <stdio.h>
+#include <stdlib.h>
+
 int	main(void)
 {
 	printf("%s\n",ft_itoa(-1234));

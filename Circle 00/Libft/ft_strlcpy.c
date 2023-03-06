@@ -6,41 +6,32 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/08 23:20:08 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:48 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:50:16 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
-	size_t	j;
 
-	i = ft_strlen(src);
-	if (i + 1 < size)
+	i = 0;
+	if (size > 0)
 	{
-		j = 0;
-		while (j < i + 1)
+		while (i < size - 1 && src[i])
 		{
-			dest[j] = src[j];
-			j++;
+			dest[i] = src[i];
+			i++;
 		}
+		dest[i] = 0;
 	}
-	else if (size)
-	{
-		j = 0;
-		while (j < size - 1)
-		{
-			dest[j] = src[j];
-			j++;
-		}
-		dest[j] = '\0';
-	}
+	while (src[i])
+		i++;
 	return (i);
 }
 /*
+#include <stdio.h>
 int	main()
 {
 	char src[] = "World!";

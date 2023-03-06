@@ -6,7 +6,7 @@
 #    By: hle <marvin@42.fr>                         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/23 15:27:30 by hle               #+#    #+#              #
-#    Updated: 2023/02/27 11:19:44 by hle              ###   ########.fr        #
+#    Updated: 2023/03/06 09:35:29 by hle              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,6 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 
-re: fcclean all
+re: fclean all
 
 .PHONY: all clean fclean re

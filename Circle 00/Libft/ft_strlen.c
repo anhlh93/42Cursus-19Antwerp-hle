@@ -6,10 +6,9 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 10:42:01 by hle               #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:23 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:49:41 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 #include "libft.h"
 
 size_t	ft_strlen(const char *str)
@@ -24,6 +23,7 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 /*
+#include <stdio.h>
 int	main()
 {
 	printf("%i", ft_strlen("854asdfafdsa"));

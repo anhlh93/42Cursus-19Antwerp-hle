@@ -6,12 +6,10 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 15:25:18 by hle               #+#    #+#             */
-/*   Updated: 2023/02/15 14:11:41 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/06 11:25:37 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -20,6 +18,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*ss2;
 	size_t			i;
 
+	if (!s1 && !s2)
+		return (0);
 	i = 0;
 	ss1 = (unsigned char *)s1;
 	ss2 = (unsigned char *)s2;
@@ -34,6 +34,8 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	return ((*ss1 - *ss2));
 }
 /*
+#include <stdio.h>
+#include <string.h>
 int	main()
 {
 	const char	str1[] = "zyxbcdefgh";
