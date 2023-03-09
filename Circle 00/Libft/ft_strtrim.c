@@ -31,8 +31,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	size;
 	char	*new;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	while (s1)
 	{
 		if (ft_checkset(((char)*s1), set) == 1)
