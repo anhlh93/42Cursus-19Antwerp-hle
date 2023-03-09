@@ -26,33 +26,38 @@ static int	ft_checkset(char const c, char const *set)
 	return (0);
 }
 
+static int	ft_get_size(char const *s1, char const *set)
+{
+	int	count;
+	int	size;
+
+	size = ft_strlen(s1);
+	count = 0;
+	while (ft_checkset(s1[size - count - 1], set))
+		count++;
+	return (size - count);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	size;
-	char	*new;
+	int		count;
+	int		size;
+	char	*tab;
 
+	count = 0;
+	size = 0;
 	if (!s1)
 		return (NULL);
 	if (!set)
 		return (ft_strdup(s1));
-	while (s1)
-	{
-		if (ft_checkset(((char)*s1), set) == 1)
-			s1++;
-		else
-			break ;
-	}
-	size = ft_strlen(s1);
-	while (size != 0)
-	{
-		if (ft_checkset(s1[size - 1], set) == 1)
-			size--;
-		else
-			break ;
-	}
-	new = (char *)malloc(sizeof(char) * (size + 1));
-	if (!new)
+	while (ft_checkset(s1[count], set))
+		count++;
+	if (count == (int)ft_strlen(s1))
+		return (ft_strdup(""));
+	size = ft_get_size(s1 + count, set) + 1;
+	tab = (char *)malloc((size) * sizeof(char));
+	if (!tab)
 		return (NULL);
-	ft_strlcpy(new, (char *)s1, size + 1);
-	return (new);
+	ft_strlcpy(tab, s1 + count, size);
+	return (tab);
 }
