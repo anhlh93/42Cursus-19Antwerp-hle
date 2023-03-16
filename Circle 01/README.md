@@ -17,3 +17,7 @@ https://wiki.sei.cmu.edu/confluence/display/c/EXP47-C.+Do+not+call+va_arg+with+a
 https://newbedev.com/char-type-in-va-arg
 
 https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/format.html
+
+https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/va-arg-va-copy-va-end-va-start?view=msvc-170
+
+https://velog.io/@ljiwoo59/ftprintf
