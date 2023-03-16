@@ -14,5 +14,14 @@
 
 int	ft_printf(const char *format, ...)
 {
-	
+	int i;
+    va_list list;
+    int result;
+
+    i = 0;
+    va_start(list, formal);
+    while (format[i])
+    {
+        
+    }
 }
