@@ -15,10 +15,10 @@ SRCS = ft_printf.c ft_putstr.c
 # Object files compile for mandatory part
 OBJS = ${SRCS:.c=.o}
 CC = cc
-CFLAGS == -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 NAME = libftprint.a
 LIBC = ar rcs
-RM = rm - f
+RM = rm -f
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}

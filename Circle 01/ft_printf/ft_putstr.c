@@ -17,7 +17,7 @@ int ft_putstr(char *s)
     int i;
 
     if (!s)
-        write(1, "null", 6);
+        write(1, "(null)", 6);
     i = 0;
     while (s[i])
     {
@@ -25,4 +25,13 @@ int ft_putstr(char *s)
         i++;
     }
     return (0);
+}
+
+int ft_putnbr(int n)
+{
+    long nb;
+
+    nb = n;
+    
+
 }

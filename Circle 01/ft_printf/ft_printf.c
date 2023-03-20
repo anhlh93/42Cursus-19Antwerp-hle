@@ -12,32 +12,32 @@
 
 #include "ft_printf.h"
 
-int ft_putchar(int c);
+int ft_putchar(int c)
 {
     write(1, &c, 1);
     return (0);
 }
 
-int ft_conversion(va_list list, char format)
+int ft_type(va_list vlist, const char c)
 {
     int result;
 
     result = 0;
-    if (char == 'c')
-        result += ft_putchar(va_arg(list, format));
-    else if (char == 's')
-        result += ft_putstr(va_arg(list, format));
-    else if (char == 'p')
-        result += ft_putptr(va_arg(list, format));
-    else if (char == 'd' || char == 'i')
-        result += ft_putnbr(va_arg(list, format));
-    else if (char == 'u')
-        result += ft_put_unsinged_int(va_arg(list, format));
-    else if (char == 'x')
-        result += ft_puthex(va_arg(list, format));
-    else if (char == 'X')
-        result += ft_puthex(va_arg(list, format));
-    else if (char == '%')
+    if (c == 'c')
+        result += ft_putchar(va_arg(vlist, int));
+    else if (c == 's')
+        result += ft_putstr(va_arg(vlist, char *));
+/*
+    else if (c == 'p')
+        result += ft_putptr(va_arg(vlist, unitptr));
+    else if (c == 'd' || c == 'i')
+        result += ft_putnbr(va_arg(vlist, int));
+    else if (c == 'u')
+        result += ft_put_unsinged_int(va_arg(vlist, long long));
+    else if (c == 'x' || c == 'X')
+        result += ft_puthex(va_arg(vlist, int), format);
+*/
+    else if (c == '%')
         result += ft_putchar('%');
     return (result);
 }
@@ -45,23 +45,23 @@ int ft_conversion(va_list list, char format)
 int	ft_printf(const char *format, ...)
 {
 	int i;
-    va_list list;
+    va_list vlist;
     int result;
 
     i = 0;
     result = 0;
-    va_start(list, formal);
+    va_start(vlist, format);
     while (format[i])
     {
         if (format[i] == '%')
         {
-            result += ft_conversion(list, format[i + 1]);
+            result += ft_type(vlist, format[i + 1]);
             i++;
         }
         else
             result += ft_putchar(format[i]);
         i++;
     }
-    va_end(list);
+    va_end(vlist);
     return(result);
 }
