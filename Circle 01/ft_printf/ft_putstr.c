@@ -33,5 +33,5 @@ int ft_putnbr(int n)
 
     nb = n;
     
-
+    return (0);
 }
