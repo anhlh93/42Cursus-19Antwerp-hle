@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 # Sources files compile for mandatory part
-SRCS = 
+SRCS = ft_printf.c ft_putstr.c
 # Object files compile for mandatory part
 OBJS = ${SRCS:.c=.o}
 CC = cc
@@ -22,6 +22,7 @@ RM = rm - f
 
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
+
 all: ${NAME}
 
 clean:
