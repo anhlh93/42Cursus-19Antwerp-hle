@@ -12,26 +12,25 @@
 
 #include "ft_printf.h"
 
-int ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
-    int i;
+	int	i;
 
-    if (!s)
-        write(1, "(null)", 6);
-    i = 0;
-    while (s[i])
-    {
-        write(1, &s[i], 1);
-        i++;
-    }
-    return (0);
+	if (!s)
+		write(1, "(null)", 6);
+	i = 0;
+	while (s[i])
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (0);
 }
 
-int ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
-    long nb;
+	long	nb;
 
-    nb = n;
-    
-    return (0);
+	nb = n;
+	return (0);
 }
