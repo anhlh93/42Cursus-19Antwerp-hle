@@ -46,7 +46,7 @@ int	ft_putptr(uintptr_t ptr)
 	int	res;
 
 	res = 0;
-	res += write(1, "0x", 2)
+	res += write(1, "0x", 2);
 	if (ptr == 0)
 		res += write(1, '0', 1);
 	else
