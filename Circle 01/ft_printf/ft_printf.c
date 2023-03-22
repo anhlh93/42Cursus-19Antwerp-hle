@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 14:48:47 by hle               #+#    #+#             */
-/*   Updated: 2023/03/06 16:06:36 by hle              ###   ########.fr       */
+/*   Updated: 2023/03/22 16:43:51 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,14 @@ int ft_type(va_list vlist, const char c)
         result += ft_putchar(va_arg(vlist, int));
     else if (c == 's')
         result += ft_putstr(va_arg(vlist, char *));
-/*
     else if (c == 'p')
-        result += ft_putptr(va_arg(vlist, unitptr));
+        result += ft_putptr(va_arg(vlist, uintptr_t));
     else if (c == 'd' || c == 'i')
         result += ft_putnbr(va_arg(vlist, int));
     else if (c == 'u')
-        result += ft_put_unsinged_int(va_arg(vlist, long long));
+        result += ft_put_uint(va_arg(vlist, unsigned int));
     else if (c == 'x' || c == 'X')
-        result += ft_puthex(va_arg(vlist, int), format);
-*/
+        result += ft_puthex(va_arg(vlist, unsigned int), format);
     else if (c == '%')
         result += ft_putchar('%');
     return (result);
