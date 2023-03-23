@@ -1,23 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test3.c                                            :+:      :+:    :+:   */
+/*   test2.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 15:46:27 by hle               #+#    #+#             */
-/*   Updated: 2023/03/17 15:47:02 by hle              ###   ########.fr       */
+/*   Created: 2023/03/13 15:32:17 by hle               #+#    #+#             */
+/*   Updated: 2023/03/23 14:01:32 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>	// INT_MAX
-#include <stdio.h>	// printf
+#include <stdarg.h>
+#include <stdio.h>
+//test va_start, va_arg, va_list
+double	average(int count, ...)
+{
+	va_list	ap;
+	double	sum;
+	int	i;
 
-int main(void) {
-	int x[2001];
-	int *y = &x[1000];
+	i = 0;
+	sum = 0;
+	va_start(ap, count);
+	while (i < count)
+	{
+		sum += va_arg(ap, int);
+		i++;
+	}
+	va_end(ap);
+	return	(sum/count);
+}
 
-	(void)x;
-	y[-10] = 5;
-	printf("%d\n", y[-10]);
+int	main(void)
+{
+	printf("%f", average(4, 1, 2, 3, 4));
+	printf("\n%f", average(3, 31, 32, 33));
+	return (0);
 }
