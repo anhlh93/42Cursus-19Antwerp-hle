@@ -16,13 +16,31 @@
 int	main()
 {
 	//test %c
+	printf("\n Test results of %%c");
+	printf("\n %c %c %c ", '0', 0, '1');
+	printf("\n %c %c %c ", '1', '2', '3');
+	printf("\n %c %c %c ", '2', 1, '0');
+
 	//test %s
-	printf("\n NULL %s NULL ", NULL);
+	printf("\n Test results of %%s");
+	printf("\n %s %s ", "", "-");
+	printf("\n %s %s ", " - ", "");
+	printf("\n %s %s %s %s %s", " - ", "", "4", "", "s2");
+	printf("\n %s %s %s %s %s", " - ", "", "4", "", "2 ");
+	printf(" NULL %s NULL ", NULL);
+
 	//test %p
+	printf("\n Test results of %%p");
 	printf("\n %p ",16);
+	
 	//test %d
+	printf("\n Test results of %%d");
+
 	//test %i
+	printf("\n Test results of %%i");
+
 	//test %u
+	printf("\n Test results of %%u");
 	printf("\n %u ", -1);
 	printf("\n %u ", -9);
 	printf("\n %u ", -10);
@@ -37,12 +55,22 @@ int	main()
 	printf("\n %u %u %u %u %u %u %u", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
 
 	//test %x
+	printf("\n Test results of %%x");
 	printf(" \n %x ", 16);
+	
 	//test %X
-	//test %%
-	//test mix
-	//test no format
-	//test random
+	printf("\n Test results of %%X");
 
+	//test %%
+	printf("\n Test results of %%%");
+
+	//test mix
+	printf("\n Test results of mix");
+
+	//test no format
+	printf("\n Test results of no format");
+
+	//test random
+	printf("\n Test results of no random");
 }
 
