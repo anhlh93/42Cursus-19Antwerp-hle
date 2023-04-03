@@ -6,9 +6,16 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:46:59 by hle               #+#    #+#             */
-/*   Updated: 2023/04/03 13:47:11 by hle              ###   ########.fr       */
+/*   Updated: 2023/04/03 14:13:22 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
+char	*get_next_line(int fd)
+{
+	char	*res;
+	int	i;
+
+	return (res);
+}

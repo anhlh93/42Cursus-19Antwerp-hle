@@ -6,8 +6,15 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:49:12 by hle               #+#    #+#             */
-/*   Updated: 2023/04/03 13:49:17 by hle              ###   ########.fr       */
+/*   Updated: 2023/04/03 13:53:41 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# include "unistd.h"
+# include "stdlib.h"
 
+char	*get_next_line(int fd)
+
+#endif
