@@ -12,32 +12,32 @@
 
 #include "ft_printf.h"
 
-int	ft_putchar(int c)
+//character
+
+void	ft_putchar(char c, int *res)
 {
 	write(1, &c, 1);
-	return (1);
+	(*res)++;
 }
 
-int	ft_type(va_list vlist, const char c)
+static void	ft_type(va_list *vlist, char c, int *i, int *res)
 {
-	int	result;
-
-	result = 0;
 	if (c == 'c')
-		result += ft_putchar(va_arg(vlist, int));
+		ft_putchar(va_arg(*vlist, int), res);
 	else if (c == 's')
-		result += ft_putstr(va_arg(vlist, char *));
+		ft_putstr(va_arg(*vlist, char *), res);
 	else if (c == 'p')
-		result += ft_putptr(va_arg(vlist, uintptr_t));
+		ft_putptr(va_arg(*vlist, size_t), res);
 	else if (c == 'd' || c == 'i')
-		result += ft_putnbr(va_arg(vlist, int));
+		ft_putnbr(va_arg(*vlist, int), res);
 	else if (c == 'u')
-		result += ft_put_uint(va_arg(vlist, unsigned int));
+		ft_put_uint(va_arg(*vlist, unsigned int), res);
 	else if (c == 'x' || c == 'X')
-		result += ft_puthex(va_arg(vlist, unsigned int), c);
+		ft_puthex(va_arg(*vlist, unsigned int), c, res);
 	else if (c == '%')
-		result += ft_putchar('%');
-	return (result);
+		ft_putchar('%', res);
+	else
+		(*i)--;
 }
 
 int	ft_printf(const char *format, ...)
@@ -53,11 +53,13 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			result += ft_type(vlist, format[i + 1]);
 			i++;
+			ft_type(&vlist, format[i], &i, &result);
 		}
 		else
-			result += ft_putchar(format[i]);
+		{
+			ft_putchar((char)format[i], &result);
+		}
 		i++;
 	}
 	va_end(vlist);

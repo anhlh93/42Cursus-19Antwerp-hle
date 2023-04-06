@@ -12,47 +12,28 @@
 
 #include "ft_printf.h"
 
-int	ft_len_ptr(uintptr_t nb)
+//pointer
+
+void	ft_putptr(size_t ptr, int *res)
 {
-	int	len;
+	char	string[25];
+	char	*base_character;
+	int		i;
 
-	len = 0;
-	while (nb > 0)
-	{
-		nb = nb / 16;
-		len++;
-	}
-	return (len);
-}
-
-void	ft_print_ptr(uintptr_t nb)
-{
-	if (nb > 16)
-	{
-		ft_print_ptr(nb / 16);
-		ft_print_ptr(nb % 16);
-	}
-	else
-	{
-		if (nb <= 9)
-			ft_putchar(nb + '0');
-		else
-			ft_putchar(nb - 10 + 'a');
-	}
-}
-
-int	ft_putptr(uintptr_t ptr)
-{
-	int	res;
-
-	res = 0;
-	res += write(1, "0x", 2);
+	i = 0;
+	base_character = "0123456789abcdef";
+	write(1, "0x", 2);
+	(*res) += 2;
 	if (ptr == 0)
-		res += write(1, "0", 1);
-	else
 	{
-		ft_print_ptr(ptr);
-		res += ft_len_ptr(ptr);
+		ft_putchar('0', res);
+		return ;
 	}
-	return (res);
+	while (ptr != 0)
+	{
+		string[i++] = base_character[ptr % 16];
+		ptr /= 16;
+	}
+	while (i--)
+		ft_putchar(string[i], res);
 }

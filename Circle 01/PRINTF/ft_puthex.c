@@ -12,44 +12,29 @@
 
 #include "ft_printf.h"
 
-int	ft_hex_len(unsigned int num)
-{
-	int	len;
+//hexadecimal - x or X
 
-	len = 0;
-	while (num > 0)
-	{
-		num /= 16;
-		len++;
-	}
-	return (len);
-}
-
-void	ft_print_hex(unsigned int nb, const char format)
+void	ft_puthex(unsigned int num, char c, int *res)
 {
-	if (nb > 16)
-	{
-		ft_print_ptr(nb / 16);
-		ft_print_ptr(nb % 16);
-	}
+	char	string[25];
+	char	*base_character;
+	int		i;
+
+	if (c == 'X')
+		base_character = "0123456789ABCDEF";
 	else
-	{
-		if (nb <= 9)
-			ft_putchar(nb + '0');
-		else
-		{
-			if (format == 'x')
-				ft_putchar(nb - 10 + 'a');
-			else if (format == 'X')
-				ft_putchar(nb - 10 + 'A');
-		}
-	}
-}
-
-int	ft_puthex(unsigned int num, const char format)
-{
+		base_character = "0123456789abcdef";
+	i = 0;
 	if (num == 0)
-		return (write(1, "0", 1));
-	ft_print_hex(num, format);
-	return (ft_hex_len(num));
+	{
+		ft_putchar('0', res);
+		return ;
+	}
+	while (num != 0)
+	{
+		string[i++] = base_character [num % 16];
+		num /= 16;
+	}
+	while (i--)
+		ft_putchar(string[i], res);
 }
