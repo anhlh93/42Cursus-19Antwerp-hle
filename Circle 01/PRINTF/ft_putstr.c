@@ -12,17 +12,22 @@
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
-{
-	int	i;
+//string
 
-	if (!s)
-		write(1, "(null)", 6);
+void	ft_putstr(char *s, int *res)
+{
+	size_t	i;
+
 	i = 0;
+	if (!s)
+	{
+		write(1, "(null)", 6);
+		(*res) += 6;
+		return ;
+	}
 	while (s[i])
 	{
-		write(1, &s[i], 1);
+		ft_putchar(s[i], res);
 		i++;
 	}
-	return (i);
 }

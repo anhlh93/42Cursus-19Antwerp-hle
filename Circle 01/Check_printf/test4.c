@@ -57,9 +57,22 @@ int	main()
 	//test %x
 	printf("\n Test results of %%x");
 	printf(" \n %x ", 16);
+	printf(" \n %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42))
 	
 	//test %X
 	printf("\n Test results of %%X");
+	printf("\n %X ", -1);
+	printf("\n %X ", 16);
+	printf("\n %X ", -9);
+	printf("\n %X ", -11);
+        printf("\n %X ", -12);
+        printf("\n %X ", -14);
+	printf("\n %X ", -15);
+        printf("\n %X ", -16);
+        printf("\n %X ", -99);
+        printf("\n %X ", -101);
+        printf("\n %X ", INT_MAX);
+        printf("\n %X ", LONG_MAX);
 
 	//test %%
 	printf("\n Test results of %%%");

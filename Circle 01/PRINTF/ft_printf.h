@@ -16,21 +16,12 @@
 # include "unistd.h"
 # include "stdlib.h"
 
-int		ft_putchar(int c);
-int		ft_putstr(char *s);
-int		ft_len_ptr(uintptr_t nb);
-int		ft_putptr(uintptr_t ptr);
-void	ft_print_ptr(uintptr_t nb);
-int		ft_len(int n);
-int		ft_put_uint(unsigned int nb);
-int		ft_type(va_list vlist, const char c);
-int		ft_printf(const char *format, ...);
-int		ft_putnbr(int n);
-int		ft_put_uint(unsigned int nb);
-int		ft_hex_len(unsigned int num);
-void	ft_print_hex(unsigned int nb, const char format);
-int		ft_puthex(unsigned int num, const char format);
-char	*ft_itoa(int n);
-size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+void		ft_putchar(char c, int *res);
+void		ft_putstr(char *s, int *res);
+void		ft_putptr(size_t ptr, int *res);
+void		ft_put_uint(unsigned int nb, int *res);
+int			ft_printf(const char *format, ...);
+void		ft_putnbr(int n, int *res);
+void		ft_puthex(unsigned int num, char c, int *res);
 
 #endif

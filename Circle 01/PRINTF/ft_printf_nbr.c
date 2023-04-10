@@ -12,98 +12,34 @@
 
 #include "ft_printf.h"
 
-int	ft_len(int n)
+//number
+
+void	ft_putnbr(int n, int *res)
 {
-	int	len;
-
-	len = 0;
-	if (n < 0)
-	{
-		len++;
-		n *= (-1);
-	}
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		n /= 10;
-		len++;
-	}
-	return (len);
-}
-
-static char	*special(int n)
-{
-	char	*str;
-
 	if (n == -2147483648)
 	{
-		str = (char *)malloc(12 * sizeof(char));
-		if (!str)
-			return (NULL);
-		ft_strlcpy(str, "-2147483648", 12);
+		write(1, "-2147483648", 11);
+		(*res) += 11;
+		return ;
 	}
-	else
-	{
-		str = (char *)malloc(2 * sizeof(char));
-		if (!str)
-			return (NULL);
-		ft_strlcpy(str, "0", 2);
-	}
-	return (str);
-}
-
-char	*ft_itoa(int n)
-{
-	int		len;
-	char	*s;
-
-	len = ft_len(n);
-	if (n == -2147483648 || n == 0)
-		return (special(n));
-	s = (char *)malloc((len + 1) * sizeof(char));
-	if (!s)
-		return (NULL);
 	if (n < 0)
 	{
-		s[0] = '-';
-		n *= (-1);
+		ft_putchar('-', res);
+		ft_putnbr(n * (-1), res);
 	}
-	s[len--] = '\0';
-	while (n > 0)
-	{
-		s[len--] = n % 10 + 48;
-		n = n / 10;
-	}
-	return (s);
-}
-
-int	ft_putnbr(int n)
-{
-	int		res;
-	char	*num;
-
-	num = ft_itoa(n);
-	res = ft_putstr(num);
-	free(num);
-	return (res);
-}
-
-int	ft_put_uint(unsigned int nb)
-{
-	int		res;
-	char	*num;
-	int		n;
-
-	n = (int) nb;
-	res = 0;
-	if (n == 0)
-		res += write(1, "0", 1);
 	else
 	{
-		num = ft_itoa(n);
-		res += ft_putstr(num);
-		free(num);
+		if (n > 9)
+			ft_putnbr(n / 10, res);
+		ft_putchar(n % 10 + '0', res);
 	}
-	return (res);
+}
+
+//unsigned int
+
+void	ft_put_uint(unsigned int nb, int *res)
+{
+	if (nb >= 10)
+		ft_put_uint(nb / 10, res);
+	ft_putchar(nb % 10 + '0', res);
 }
