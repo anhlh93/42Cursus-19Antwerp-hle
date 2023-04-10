@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:49:12 by hle               #+#    #+#             */
-/*   Updated: 2023/04/03 13:53:41 by hle              ###   ########.fr       */
+/*   Updated: 2023/04/10 16:23:32 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 # include "unistd.h"
 # include "stdlib.h"
 
-char	*get_next_line(int fd)
+char	*get_line(int fd, char *line);
+char	*ft_get_next_line(int fd, char *line);
+char	*new_line(char *line);
+char	*get_next_line(int fd);
 
 #endif
