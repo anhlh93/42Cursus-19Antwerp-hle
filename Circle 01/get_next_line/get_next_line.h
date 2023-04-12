@@ -6,14 +6,18 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:49:12 by hle               #+#    #+#             */
-/*   Updated: 2023/04/10 16:23:32 by hle              ###   ########.fr       */
+/*   Updated: 2023/04/12 10:54:16 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-# include "unistd.h"
-# include "stdlib.h"
+# include "unistd.h" //read
+# include "stdlib.h" //malloc
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 size_t	ft_strlen(char *s);
 char	*ft_strchr(char *s, int c);

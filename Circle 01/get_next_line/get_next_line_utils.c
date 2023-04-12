@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:47:41 by hle               #+#    #+#             */
-/*   Updated: 2023/04/10 16:57:48 by hle              ###   ########.fr       */
+/*   Updated: 2023/04/12 10:17:59 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,9 @@ char	*ft_strchr(char *s, int c)
 
 char	*ft_strjoin(char *line, char *buff)
 {
-	char	*new;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
 	if (!line)
 	{
@@ -46,14 +48,17 @@ char	*ft_strjoin(char *line, char *buff)
 	}
 	if (!line || !buff)
 		return (NULL);
-	new = malloc(sizeof(char) * ((ft_strlen(line) + ft_strlen(buff)) + 1));
-	if (!new)
+	str = malloc(sizeof(char) * ((ft_strlen(line) + ft_strlen(buff)) + 1));
+	if (str == NULL)
 		return (NULL);
-	while (line)
-		*new++ = *line++;
-	while (buff)
-		*new++ = *buff++;
-	*new = '\0';
+	i = -1;
+	j = 0;
+	if (line)
+		while (line[++i] != '\0')
+			str[i] = line[i];
+	while (buff[j] != '\0')
+		str[i++] = buff[j++];
+	str[ft_strlen(line) + ft_strlen(buff)] = '\0';
 	free(line);
-	return (new);
+	return (str);
 }
