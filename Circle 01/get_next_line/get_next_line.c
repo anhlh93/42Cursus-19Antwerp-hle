@@ -12,12 +12,12 @@
 
 #include "get_next_line.h"
 
-char	*get_line(int fd, char *line)
+char	*extract_line(int fd, char *line)
 {
 	char	*buffer;
-	ssize_t	*read_bytes;
+	ssize_t	read_bytes;
 
-	buffer = (char *)malloc(sizeof (char) * (BUFFER_SIZE + 1));
+	buffer = (char *)malloc(BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
 	read_bytes = 1;
@@ -29,6 +29,7 @@ char	*get_line(int fd, char *line)
 			free(buffer);
 			return (NULL);
 		}
+		buffer[read_bytes] = '\0';
 		line = ft_strjoin(line, buffer);
 	}
 	free(buffer);
@@ -75,9 +76,9 @@ char	*new_line(char *line)
 		return (NULL);
 	j = -1;
 	while (line[++i])
-		str[++j] = line[++i];
+		str[++j] = line[i];
 	str[++j] = '\0';
-	free(line)
+	free(line);
 	return (str);
 }
 
@@ -88,7 +89,7 @@ char	*get_next_line(int fd)
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	line = get_line(fd, line);
+	line = extract_line(fd, line);
 	if (!line)
 		return (NULL);
 	next_line = ft_get_next_line(line);

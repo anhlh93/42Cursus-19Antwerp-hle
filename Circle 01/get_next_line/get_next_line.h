@@ -15,8 +15,11 @@
 # include "unistd.h"
 # include "stdlib.h"
 
-char	*get_line(int fd, char *line);
-char	*ft_get_next_line(int fd, char *line);
+size_t	ft_strlen(char *s);
+char	*ft_strchr(char *s, int c);
+char	*extract_line(int fd, char *line);
+char	*ft_strjoin(char *line, char *buff);
+char	*ft_get_next_line(char *line);
 char	*new_line(char *line);
 char	*get_next_line(int fd);
 

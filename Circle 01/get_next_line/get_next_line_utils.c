@@ -17,7 +17,7 @@ size_t	ft_strlen(char *s)
 	size_t	i;
 
 	if (!s)
-		return (NULL);
+		return (0);
 	i = 0;
 	while (s[i])
 		i++;
@@ -26,9 +26,6 @@ size_t	ft_strlen(char *s)
 
 char	*ft_strchr(char *s, int c)
 {
-	int	i;
-
-	i = 0;
 	if (!s)
 		return (NULL);
 	while ((char)c != *s && *s != '\0')
@@ -57,5 +54,6 @@ char	*ft_strjoin(char *line, char *buff)
 	while (buff)
 		*new++ = *buff++;
 	*new = '\0';
+	free(line);
 	return (new);
 }
