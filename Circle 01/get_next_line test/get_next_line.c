@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 13:46:59 by hle               #+#    #+#             */
-/*   Updated: 2023/04/12 10:54:43 by hle              ###   ########.fr       */
+/*   Updated: 2023/04/10 17:05:05 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,29 +38,22 @@ char	*extract_line(int fd, char *line)
 
 char	*ft_get_next_line(char *line)
 {
-	int		i;
 	char	*str;
+	int		i;
 
 	i = 0;
 	if (!line[i])
 		return (NULL);
 	while (line[i] && line[i] != '\n')
 		i++;
-	str = (char *)malloc(i + 2);
+	str = (char *)malloc(sizeof (char) * (i + 2));
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (line[i] && line[i] != '\n')
-	{
-		str[i] = line[i];
-		i++;
-	}
-	if (line[i] == '\n')
-	{
-		str[i] = line[i];
-		i++;
-	}
-	str[i] = '\0';
+	while (*line && *line != '\n')
+		*str++ = *line++;
+	if (*line == '\n')
+		*str++ = *line++;
+	*str = '\0';
 	return (str);
 }
 

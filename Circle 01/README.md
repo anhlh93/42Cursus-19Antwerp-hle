@@ -21,3 +21,30 @@ https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/FUNCTIONS/fo
 https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/va-arg-va-copy-va-end-va-start?view=msvc-170
 
 https://velog.io/@ljiwoo59/ftprintf
+
+# get_next_line
+
+# born2beroot
+
+# RESOURCES
+https://velog.io/@sehhong/born2beroot-cmd
+
+https://tbonelee.tistory.com/m/16
+
+https://github.com/pasqualerossi/Born2BeRoot-Guide
+
+https://baigal.medium.com/born2beroot-e6e26dfb50ac
+
+https://github.com/gemartin99/Born2beroot-Tutorial/blob/main/README_EN.md
+
+# NOTE WHY VIRTUAL BOX CANNOT USE ON APPLE SILICON
+
+https://forums.virtualbox.org/viewtopic.php?f=8&t=98742
+
+https://forums.virtualbox.org/viewtopic.php?f=8&t=107344
+
+https://www.reddit.com/r/virtualbox/comments/dpihyd/read_this_first_macos_on_virtualbox/
+
+https://stackoverflow.com/questions/66794214/virtual-box-not-working-macbook-pro-2020-m1-macos-big-sur
+
+
