@@ -6,7 +6,7 @@
 /*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 14:06:39 by hle               #+#    #+#             */
-/*   Updated: 2023/05/31 15:04:35 by hle              ###   ########.fr       */
+/*   Updated: 2023/05/31 16:09:20 by hle              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,15 @@ void	inter(char *str1, char *str2)
 	while (str1[i] != '\0')
 	{
 		j = 0;
-		if (check_doubles(str1, str1[i], i) == 1)
+		while (str2[j] != '\0')
 		{
-			j = 0;
-			while (str2[j] != '\0')
-			{
-				if (str1[i] == str2[j])
+			if (str1[i] == str2[j])
+				if (check_doubles(str1, str1[i], i) == 1)
 				{
 					write(1, &str1[i], 1);
 					break ;
 				}
-				j++;
-			}
+			j++;
 		}			
 		i++;
 	}
