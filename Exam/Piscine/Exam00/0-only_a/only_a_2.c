@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers_2.c                               :+:      :+:    :+:   */
+/*   only_a_2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: haianhle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 16:36:11 by hle               #+#    #+#             */
-/*   Updated: 2023/06/13 16:40:07 by hle              ###   ########.fr       */
+/*   Created: 2023/06/04 22:37:40 by haianhle          #+#    #+#             */
+/*   Updated: 2023/06/04 22:38:58 by haianhle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "unistd.h"
-
-void	ft_print_numbers(void)
-{
-	char	i;
-
-	i = "0";
-	while (i <= "9")
-	{
-		write(1, &i, 1);
-		i++;
-	}
-}
+#include <unistd.h> //write
 
 int	main(void)
 {
-	ft_print_numbers();
+	write(1, "a", 1);
 	return (0);
 }
