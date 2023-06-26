@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rev_print.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haianhle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/15 08:54:52 by haianhle          #+#    #+#             */
-/*   Updated: 2023/06/15 08:58:35 by haianhle         ###   ########.fr       */
+/*   Created: 2023/06/18 22:48:56 by haianhle          #+#    #+#             */
+/*   Updated: 2023/06/18 23:30:39 by haianhle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h> //printf
+#include <unistd.h> //write
 
-int	main(void)
+char	*ft_rev_print (char *str)
 {
-	int	a;
-	int	b;
+	while (*str)
+		str++;
+	str--;
+	while (*str)
+	{
+		write(1, str, 1);
+		str--;
+	}
+	return (str);
+}
 
-	a = 3;
-	b = 4;
-	printf("Value of a and b before swap: %d and %d", a, b);
-	ft_swap(&a, &b);
-	printf("Value of a and b after swap: %d and %d", a, b);
+int	main(int ac, char **av)
+{
+	if (ac == 2)
+		ft_rev_print(*av);
+	write(1, "\n", 1);
 	return (0);
 }
