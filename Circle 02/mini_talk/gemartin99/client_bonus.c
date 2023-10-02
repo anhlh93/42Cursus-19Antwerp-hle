@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   client.c                                           :+:      :+:    :+:   */
+/*   client_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hle <marvin@42.fr>                         +#+  +:+       +#+        */
+/*   By: haianhle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 11:08:30 by hle               #+#    #+#             */
-/*   Updated: 2023/09/20 11:08:30 by hle              ###   ########.fr       */
+/*   Created: 2023/10/02 09:51:50 by haianhle          #+#    #+#             */
+/*   Updated: 2023/10/02 09:51:55 by haianhle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include<unistd.h>
 #include<stdio.h>
 #include<sys/types.h>
-#include <limits.h>
+#include<limits.h>
+#include<stdlib.h>
 
 int	ft_atoi(const char *str)
 {
@@ -33,40 +34,78 @@ int	ft_atoi(const char *str)
 	return (nbr);
 }
 
-void	conv_bin(char *s, int pidserv)
+void	conv_int_bin(unsigned int c, int pidserv)
 {
-	int		i;
-	int		base;
-	char	letra;
+	unsigned int		base;
+	unsigned int		cont;
 
-	i = 0;
-	while (s[i])
+	cont = 0;
+	base = 2147483648;
+	if (cont < 32)
 	{
-		base = 128;
-		letra = s[i];
 		while (base > 0)
 		{
-			if (letra >= base)
+			if (c >= base)
 			{
 				kill(pidserv, SIGUSR1);
-				letra = letra - base;
+				c = c - base;
 			}
 			else
+			{
 				kill(pidserv, SIGUSR2);
+			}
 			base = base / 2;
-			usleep(100);
+			usleep(300);
 		}
-		i++;
 	}
+	usleep(500);
+	cont++;
+}
+
+void	conv_bin(unsigned char c, int pidserv)
+{
+	int		base;
+
+	base = 128;
+	while (base > 0)
+	{
+		if (c >= base)
+		{
+			kill(pidserv, SIGUSR1);
+			c = c - base;
+		}
+		else
+		{
+			kill(pidserv, SIGUSR2);
+		}
+		base = base / 2;
+		usleep(300);
+	}
+	usleep(500);
+}
+
+void	confirm(int sig)
+{
+	if (sig == SIGUSR1)
+		write (1, "Received bit\n", 13);
 }
 
 int	main(int argc, char **argv)
 {
 	int	pidserv;
+	int	i;
 
+	i = 0;
 	if (argc != 3)
 		return (-1);
+	signal(SIGUSR1, confirm);
 	pidserv = ft_atoi(argv[1]);
-	conv_bin(argv[2], pidserv);
+	conv_int_bin(getpid(), pidserv);
+	while (argv[2][i])
+	{
+		conv_bin(argv[2][i], pidserv);
+		i++;
+	}
+	conv_bin('\0', pidserv);
 	return (0);
 }
