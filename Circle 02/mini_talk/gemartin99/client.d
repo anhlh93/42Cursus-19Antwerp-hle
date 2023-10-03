@@ -1,1 +1,1 @@
-client: client.c
+client: client_bonus.c

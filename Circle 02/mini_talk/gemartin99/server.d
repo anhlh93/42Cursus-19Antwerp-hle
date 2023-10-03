@@ -1,1 +1,1 @@
-server: server.c
+server: server_bonus.c
